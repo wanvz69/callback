@@ -1,0 +1,2846 @@
+                         GTPS CLOUD LUA API
+Source: https://dash.gtps.cloud/docs
+
+
+============================================================
+Player
+============================================================
+Slug: player
+
+The Player class represents a player. Use these methods to interact with player data, inventory, appearance, and more.
+
+------------------------------------------------------------
+Player
+------------------------------------------------------------
+Player:getName()
+  Description: Returns the name for this avatar.
+  Returns: string
+
+Player:enterWorld(worldName, notification, bypass)
+  Description: Runs the enter world operation for this avatar. It uses worldName, notification, optional bypass.
+  Parameters: worldName, notification, bypass
+  Returns: void
+
+Player:leaveWorld()
+  Description: Runs the leave world operation for this avatar.
+  Returns: void
+
+Player:punchBlock(x, y)
+  Description: Runs the punch block operation for this avatar. It uses x, y.		
+  Parameters: x, y
+  Returns: void
+
+Player:placeBlock(x, y, itemID)
+  Description: Runs the place block operation for this avatar. It uses x, y, itemID.
+  Parameters: x, y, itemID
+  Returns: void
+
+Player:getCleanName()
+  Description: Returns the clean name for this avatar.
+  Returns: string
+
+Player:getRealName()
+  Description: Returns the real name for this avatar.
+  Returns: string
+
+Player:getRealCleanName()
+  Description: Returns the real clean name for this avatar.
+  Returns: string
+
+Player:getTotalWorldLocks()
+  Description: Returns the total world locks for this avatar.
+  Returns: number
+
+Player:getUserID()
+  Description: Returns the user ID for this avatar.
+  Returns: number
+
+Player:getPosX()
+  Description: Returns the pos x for this avatar.
+  Returns: number
+
+Player:getPosY()
+  Description: Returns the pos y for this avatar.
+  Returns: number
+
+Player:getBlockPosX()
+  Description: Returns the block pos x for this avatar.
+  Returns: number
+
+Player:getBlockPosY()
+  Description: Returns the block pos y for this avatar.
+  Returns: number
+
+Player:getMiddlePosX()
+  Description: Returns the middle pos x for this avatar.
+  Returns: number
+
+Player:getMiddlePosY()
+  Description: Returns the middle pos y for this avatar.
+  Returns: number
+
+Player:getNetID()
+  Description: Returns the net ID for this avatar.
+  Returns: number
+
+Player:hasMod(modID)
+  Description: Checks whether this avatar has mod. It uses modID.
+  Parameters: modID
+  Returns: boolean
+
+Player:hasRole(roleID)
+  Description: Checks whether this avatar has role. It uses roleID.
+  Parameters: roleID
+  Returns: boolean
+
+Player:setRole(roleID)
+  Description: Sets the role for this avatar. It uses roleID.
+  Parameters: roleID
+  Returns: void
+
+Player:addMod(modID, value)
+  Description: Adds mod data or value to this avatar. It uses modID, value.
+  Parameters: modID, value
+  Returns: void
+
+Player:removeMod(modID)
+  Description: Removes the mod from this avatar. It uses modID.
+  Parameters: modID
+  Returns: void
+
+Player:getMod(modID)
+  Description: Returns the active effect for the given mod ID, or nil.
+  Parameters: modID
+  Returns: ActiveEffects?
+
+Player:changeItem(itemID, itemCount, addBackpack)
+  Description: Runs the change item operation for this avatar. It uses itemID, itemCount, addBackpack.
+  Parameters: itemID, itemCount, addBackpack
+  Returns: boolean
+
+Player:getItemAmount(itemID)
+  Description: Returns the item amount for this avatar.
+  Parameters: itemID
+  Returns: number
+
+Player:getItemAmountBackpack(itemID)
+  Description: Returns the item amount backpack for this avatar.
+  Parameters: itemID
+  Returns: number
+
+Player:getXP()
+  Description: Returns the XP for this avatar.
+  Returns: number
+
+Player:setXP(xp)
+  Description: Sets the XP for this avatar. It uses xp.
+  Parameters: xp
+  Returns: void
+
+Player:removeXP(xp)
+  Description: Removes the XP from this avatar. It uses xp.
+  Parameters: xp
+  Returns: void
+
+Player:getLevel()
+  Description: Returns the level for this avatar.
+  Returns: number
+
+Player:getStats(statType)
+  Description: Returns the stats for this avatar.
+  Parameters: statType
+  Returns: number
+
+Player:setStats(statType, statNumber)
+  Description: Sets the stats for this avatar. It uses statType, statNumber.
+  Parameters: statType, statNumber
+  Returns: void
+
+Player:getRequiredXP()
+  Description: Returns the required XP for this avatar.
+  Returns: number
+
+Player:getGems()
+  Description: Returns the gems for this avatar.
+  Returns: number
+
+Player:addGems(gems, instantSet, progressQuests)
+  Description: Adds gems to the avatar, updates the gem display, and optionally progresses gem-related quests.
+  Parameters: gems, instantSet, progressQuests
+  Returns: void
+
+Player:removeGems(gems, instantSet)
+  Description: Removes gems from the avatar and updates the gem display. Returns false if the avatar doesn't have enough.
+  Parameters: gems, instantSet
+  Returns: boolean
+
+Player:setGems(gems, instantSet)
+  Description: Sets the avatar gem balance and updates the client display according to the instant flag. Returns true.
+  Parameters: gems, instantSet
+  Returns: boolean
+
+Player:updateGems(instantSet)
+  Description: Refreshes the avatar gem display on the client.
+  Parameters: instantSet
+  Returns: void
+
+Player:getAutofarm()
+  Description: Returns the autofarm for this avatar.
+  Returns: PlayerAutofarm
+
+Player:onConsoleMessage(message, delay)
+  Description: Triggers the console message behavior for this avatar. It uses message, optional delay.
+  Parameters: message, delay
+  Returns: void
+
+Player:playAudio(message)
+  Description: Plays the audio for the target client. It uses message.
+  Parameters: message
+  Returns: void
+
+Player:onDialogRequest(message, delay, callback)
+  Description: Shows a dialog. If callback is a function, it is registered for the dialog name found after end_dialog| in the message.
+  Parameters: message, delay, callback
+  Returns: void
+
+Player:onStoreRequest(message, delay)
+  Description: Triggers the store request behavior for this avatar. It uses message, optional delay.
+  Parameters: message, delay
+  Returns: void
+
+Player:onStorePurchaseResult(message, delay)
+  Description: Triggers the store purchase result behavior for this avatar. It uses message, optional delay.
+  Parameters: message, delay
+  Returns: void
+
+Player:onTalkBubble(netID, message, persistMessage, delay)
+  Description: Triggers the talk bubble behavior for this avatar. It uses netID, message, persistMessage, optional delay.
+  Parameters: netID, message, persistMessage, delay
+  Returns: void
+
+Player:onTextOverlay(message, delay)
+  Description: Triggers the text overlay behavior for this avatar. It uses message, optional delay.
+  Parameters: message, delay
+  Returns: void
+
+Player:canFit(items)
+  Description: Checks whether the avatar inventory can fit the items. items is a table of { id, count } pairs.
+  Parameters: items
+  Returns: boolean
+
+Player:getCoins()
+  Description: Returns the coins for this avatar.
+  Returns: number
+
+Player:addCoins(coins)
+  Description: Adds coins data or value to this avatar. It uses coins.
+  Parameters: coins
+  Returns: void
+
+Player:setCoins(coins)
+  Description: Sets the coins for this avatar. It uses coins.
+  Parameters: coins
+  Returns: void
+
+Player:removeCoins(coins, progressQuests)
+  Description: Removes the coins from this avatar. It uses coins, progressQuests.
+  Parameters: coins, progressQuests
+  Returns: boolean
+
+Player:progressQuests(itemID, itemCount)
+  Description: Runs the progress quests operation for this avatar. It uses itemID, itemCount.
+  Parameters: itemID, itemCount
+  Returns: void
+
+Player:upgradeInventorySpace(size)
+  Description: Runs the upgrade inventory space operation for this avatar. It uses size.
+  Parameters: size
+  Returns: void
+
+Player:removeInventorySpace(size)
+  Description: Removes the inventory space from this avatar. It uses size.
+  Parameters: size
+  Returns: void
+
+Player:setInventorySpace(newSize)
+  Description: Sets the inventory space for this avatar. It uses newSize.
+  Parameters: newSize
+  Returns: void
+
+Player:isMaxInventorySpace()
+  Description: Checks whether this avatar is max inventory space.
+  Returns: boolean
+
+Player:getInventorySize()
+  Description: Returns the inventory size for this avatar.
+  Returns: number
+
+Player:onRedeemMenu()
+  Description: Triggers the redeem menu behavior for this avatar.
+  Returns: void
+
+Player:getWorldName()
+  Description: Returns the world name for this avatar.
+  Returns: string
+
+Player:getWorld()
+  Description: Returns the world for this avatar.
+  Returns: World
+
+Player:onGrow4GoodDonate()
+  Description: Triggers the grow4 good donate behavior for this avatar.
+  Returns: void
+
+Player:getMods()
+  Description: Returns all active effects for this avatar.
+  Returns: {ActiveEffects}
+
+Player:getClothingItemID(index)
+  Description: Returns the clothing item ID for this avatar.
+  Parameters: index
+  Returns: number
+
+Player:getSubscription(subType)
+  Description: Returns the subscription of the given type, or nil.
+  Parameters: subType
+  Returns: PlayerSubscription?
+
+Player:addSubscription(Type, exp)
+  Description: Adds a subscription of the given type. exp is the expiry timestamp; 0 makes it permanent.
+  Parameters: Type, exp
+  Returns: PlayerSubscription
+
+Player:removeSubscription(type)
+  Description: Removes the subscription from this avatar. It uses type.
+  Parameters: type
+  Returns: void
+
+Player:getPlaytime()
+  Description: Returns the playtime for this avatar.
+  Returns: number
+
+Player:setPlaytime(time)
+  Description: Sets the playtime for this avatar. It uses time.
+  Parameters: time
+  Returns: void
+
+Player:addPlaytime(time)
+  Description: Adds playtime data or value to this avatar. It uses time.
+  Parameters: time
+  Returns: void
+
+Player:getAccountCreationTime()
+  Description: Returns the account creation time for this avatar.
+  Returns: number
+
+Player:setAccountCreationTime(time)
+  Description: Sets the account creation time for this avatar. It uses time.
+  Parameters: time
+  Returns: void
+
+Player:getAccountCreationDateStr()
+  Description: Returns the account creation date str for this avatar.
+  Returns: string
+
+Player:getTransformProfileButtons()
+  Description: Returns the transform profile buttons for this avatar.
+  Returns: string
+
+Player:onTradeHistoryUI(targetPlayer)
+  Description: Triggers the trade history UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:onBackpackUI(targetPlayer)
+  Description: Triggers the backpack UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:onMentorshipUI()
+  Description: Triggers the mentorship UI behavior for this avatar.
+  Returns: void
+
+Player:onVouchersUI()
+  Description: Triggers the vouchers UI behavior for this avatar.
+  Returns: void
+
+Player:onNameIconsUI(targetPlayer)
+  Description: Triggers the name icons UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:onWrenchIconsUI(targetPlayer)
+  Description: Triggers the wrench icons UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:onTitlesUI(targetPlayer)
+  Description: Triggers the titles UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:onAchievementsUI(targetPlayer)
+  Description: Triggers the achievements UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:onClothesUI(targetPlayer)
+  Description: Triggers the clothes UI behavior for this avatar. It uses optional targetPlayer.
+  Parameters: targetPlayer
+  Returns: void
+
+Player:getClassicProfileContent(catType, flags)
+  Description: Returns the classic profile tab content. catType: 1 level up, 2 skills, 3 quests, 4 badges, 5 cheats, 6 locked worlds. flags is only used by the locked worlds tab.
+  Parameters: catType, flags
+  Returns: string
+
+Player:getDiscordID()
+  Description: Returns the discord ID for this avatar.
+  Returns: string
+
+Player:onLinkDiscordUI()
+  Description: Triggers the link discord UI behavior for this avatar.
+  Returns: void
+
+Player:onUnlinkDiscordUI()
+  Description: Triggers the unlink discord UI behavior for this avatar.
+  Returns: void
+
+Player:getUnlockedAchievementsCount()
+  Description: Returns the unlocked achievements count for this avatar.
+  Returns: number
+
+Player:getBackpackUsedSize()
+  Description: Returns the backpack used size for this avatar.
+  Returns: number
+
+Player:onFavItemsUI()
+  Description: Triggers the fav items UI behavior for this avatar.
+  Returns: void
+
+Player:onOnlineStatusUI()
+  Description: Triggers the online status UI behavior for this avatar.
+  Returns: void
+
+Player:getOnlineStatus()
+  Description: Returns the online status for this avatar.
+  Returns: number
+
+Player:onPersonalizeWrenchUI()
+  Description: Triggers the personalize wrench UI behavior for this avatar.
+  Returns: void
+
+Player:getHomeWorldID()
+  Description: Returns the home world ID for this avatar.
+  Returns: number
+
+Player:getProfileGuildInfo()
+  Description: Returns the profile guild info for this avatar.
+  Returns: string
+
+Player:getSubscriptionInfo()
+  Description: Returns the subscription info for this avatar.
+  Returns: string
+
+Player:getCardBattleInfo()
+  Description: Returns the card battle info for this avatar.
+  Returns: string
+
+Player:getProfileAccessButton()
+  Description: Returns the profile access button for this avatar.
+  Returns: string
+
+Player:getProfileGuildJoinButton()
+  Description: Returns the profile guild join button for this avatar.
+  Returns: string
+
+Player:onBillboardUI()
+  Description: Triggers the billboard UI behavior for this avatar.
+  Returns: void
+
+Player:onNotebookUI()
+  Description: Triggers the notebook UI behavior for this avatar.
+  Returns: void
+
+Player:onGrowpassUI()
+  Description: Triggers the growpass UI behavior for this avatar.
+  Returns: void
+
+Player:onGrowmojiUI()
+  Description: Triggers the growmoji UI behavior for this avatar.
+  Returns: void
+
+Player:onGrow4GoodUI()
+  Description: Triggers the grow4 good UI behavior for this avatar.
+  Returns: void
+
+Player:onTradeScanUI()
+  Description: Triggers the trade scan UI behavior for this avatar.
+  Returns: void
+
+Player:getGuildID()
+  Description: Returns the guild ID for this avatar.
+  Returns: number
+
+Player:onGuildNotebookUI()
+  Description: Triggers the guild notebook UI behavior for this avatar.
+  Returns: void
+
+Player:onProfileUI(world, tab)
+  Description: Triggers the profile UI behavior for this avatar. It uses world, tab.
+  Parameters: world, tab
+  Returns: void
+
+Player:onAddNotification(texture, message, audio, num, delay)
+  Description: Triggers the add notification behavior for this avatar. It uses texture, message, audio, num, optional delay.
+  Parameters: texture, message, audio, num, delay
+  Returns: void
+
+Player:onParticleEffect(particleID, posX, posY, num, num2, delay)
+  Description: Triggers the particle effect behavior for this avatar. It uses particleID, posX, posY, num, num2, optional delay.
+  Parameters: particleID, posX, posY, num, num2, delay
+  Returns: void
+
+Player:setNextDialogRGBA(R, G, B, A)
+  Description: Sets the next dialog RGBA for this avatar. It uses R, G, B, A.
+  Parameters: R, G, B, A
+  Returns: void
+
+Player:resetDialogColor()
+  Description: Resets the dialog color for this avatar.
+  Returns: void
+
+Player:setNextDialogBorderRGBA(R, G, B, A)
+  Description: Sets the next dialog border RGBA for this avatar. It uses R, G, B, A.
+  Parameters: R, G, B, A
+  Returns: void
+
+Player:updateStats(world, type, amount)
+  Description: Updates the stats for this avatar. It uses world, type, optional amount.
+  Parameters: world, type, amount
+  Returns: void
+
+Player:getCountry()
+  Description: Returns the country for this avatar.
+  Returns: string
+
+Player:setCountry(country)
+  Description: Sets the country for this avatar. It uses country.
+  Parameters: country
+  Returns: void
+
+Player:getPlatform()
+  Description: Returns the platform for this avatar.
+  Returns: string
+
+Player:sendVariant(variantList, delay, netID)
+  Description: Sends a variant list packet to the online avatar. variantList is a table of strings, numbers, {x, y} vectors or {x, y, z} vectors.
+  Parameters: variantList, delay, netID
+  Returns: void
+
+Player:sendAction(action_str)
+  Description: Sends the action to the target client or service. It uses action_str.
+  Parameters: action_str
+  Returns: void
+
+Player:getInventoryItems()
+  Description: Returns the inventory items for this avatar.
+  Returns: {InventoryItem}
+
+Player:disconnect()
+  Description: Runs the disconnect operation for this avatar.
+  Returns: void
+
+Player:sendRawPacket(data)
+  Description: Sends the raw packet to the target client or service. It uses data.
+  Parameters: data
+  Returns: void
+
+Player:getType()
+  Description: Returns the type for this avatar.
+  Returns: number
+
+Player:isFacingLeft()
+  Description: Checks whether this avatar is facing left.
+  Returns: boolean
+
+Player:isOnline()
+  Description: Checks whether this avatar is online.
+  Returns: boolean
+
+Player:addTitle(title_id)
+  Description: Adds title data or value to this avatar. It uses title_id.
+  Parameters: title_id
+  Returns: void
+
+Player:hasTitle(title_id)
+  Description: Checks whether this avatar has title. It uses title_id.
+  Parameters: title_id
+  Returns: boolean
+
+Player:removeTitle(title_id)
+  Description: Removes the title from this avatar. It uses title_id.
+  Parameters: title_id
+  Returns: void
+
+Player:getActiveTitles()
+  Description: Returns the active titles for this avatar.
+  Returns: {any}
+
+Player:addActiveTitle(title_id)
+  Description: Adds active title data or value to this avatar. It uses title_id.
+  Parameters: title_id
+  Returns: void
+
+Player:removeActiveTitle(title_id)
+  Description: Removes the active title from this avatar. It uses title_id.
+  Parameters: title_id
+  Returns: void
+
+Player:addMail(mail)
+  Description: Adds a mail to the mailbox. Takes { titleID, titleLabel, titleDescription, longDescription, expireTime, rewards = { { id, count } } }.
+  Parameters: mail
+  Returns: void
+
+Player:clearMailbox()
+  Description: Clears the mailbox for this avatar.
+  Returns: void
+
+Player:setNickname(nickname)
+  Description: Sets the nickname for this avatar. It uses nickname.
+  Parameters: nickname
+  Returns: void
+
+Player:resetNickname()
+  Description: Resets the nickname for this avatar.
+  Returns: void
+
+Player:getBankBalance()
+  Description: Returns the bank balance for this avatar.
+  Returns: number
+
+Player:addBankBalance(balance)
+  Description: Adds bank balance data or value to this avatar. It uses balance.
+  Parameters: balance
+  Returns: void
+
+Player:removeBankBalance(balance)
+  Description: Removes the bank balance from this avatar. It uses balance.
+  Parameters: balance
+  Returns: boolean
+
+Player:setBankBalance(balance)
+  Description: Sets the bank balance for this avatar. It uses balance.
+  Parameters: balance
+  Returns: void
+
+Player:setCountryFlagForeground(item_id)
+  Description: Sets the country flag foreground for this avatar. It uses item_id.
+  Parameters: item_id
+  Returns: void
+
+Player:setCountryFlagBackground(item_id)
+  Description: Sets the country flag background for this avatar. It uses item_id.
+  Parameters: item_id
+  Returns: void
+
+Player:getCountryFlagForeground()
+  Description: Returns the country flag foreground for this avatar.
+  Returns: number
+
+Player:getCountryFlagBackground()
+  Description: Returns the country flag background for this avatar.
+  Returns: number
+
+Player:addLevel(level)
+  Description: Adds level data or value to this avatar. It uses level.
+  Parameters: level
+  Returns: void
+
+Player:removeLevel(level)
+  Description: Removes the level from this avatar. It uses level.
+  Parameters: level
+  Returns: void
+
+Player:setLevel(level)
+  Description: Sets the level for this avatar. It uses level.
+  Parameters: level
+  Returns: void
+
+Player:ban(modDuration, reason, punishedBy, banDevice, banIP)
+  Description: Runs the ban operation for this avatar. It uses modDuration, reason, punishedBy, banDevice, banIP.
+  Parameters: modDuration, reason, punishedBy, banDevice, banIP
+  Returns: void
+
+Player:setRoleQuestLevel(type, newLevel)
+  Description: Sets the role quest level for this avatar. It uses type, newLevel.
+  Parameters: type, newLevel
+  Returns: void
+
+Player:getRoleQuestLevel(type)
+  Description: Returns the role quest level for this avatar.
+  Parameters: type
+  Returns: number
+
+Player:getIP()
+  Description: Returns the ip for this avatar.
+  Returns: string
+
+Player:getRID()
+  Description: Returns the rid for this avatar.
+  Returns: string
+
+Player:setPassword(tankIDPass)
+  Description: Sets the password for this avatar. It uses tankIDPass.
+  Parameters: tankIDPass
+  Returns: void
+
+Player:getEmail()
+  Description: Returns the email for this avatar.
+  Returns: string
+
+Player:getBackpackItems()
+  Description: Returns the backpack items for this avatar.
+  Returns: {InventoryItem}
+
+Player:getGender()
+  Description: Returns the gender for this avatar.
+  Returns: number
+
+Player:hasActiveBlessing(blessingID)
+  Description: Checks whether this avatar has active blessing. It uses blessingID.
+  Parameters: blessingID
+  Returns: boolean
+
+Player:hasBlessing(blessingID)
+  Description: Checks whether this avatar has blessing. It uses blessingID.
+  Parameters: blessingID
+  Returns: boolean
+
+Player:removeBlessing(blessingID)
+  Description: Removes the blessing from this avatar. It uses blessingID.
+  Parameters: blessingID
+  Returns: void
+
+Player:addBlessing(blessingID)
+  Description: Adds blessing data or value to this avatar. It uses blessingID.
+  Parameters: blessingID
+  Returns: void
+
+Player:checkPassword(password)
+  Description: Runs the check password operation for this avatar. It uses password.
+  Parameters: password
+  Returns: boolean
+
+Player:getDiscordInvites()
+  Description: Returns the discord invites for this avatar.
+  Returns: number
+
+Player:doAction(str)
+  Description: Runs the do action operation for this avatar. It uses str.
+  Parameters: str
+  Returns: void
+
+Player:doRawPacket(data)
+  Description: Runs the do raw packet operation for this avatar. It uses data.
+  Parameters: data
+  Returns: void
+
+Player:getAltAccounts()
+  Description: Returns the alt accounts for this avatar.
+  Returns: {Player}
+
+Player:getRole()
+  Description: Returns the role for this avatar.
+  Returns: any
+
+Player:getTitles()
+  Description: Returns the titles for this avatar.
+  Returns: {any}
+
+Player:getOwnedWorlds()
+  Description: Returns the owned worlds for this avatar.
+  Returns: {number}
+
+Player:getRecentWorlds()
+  Description: Returns the recent worlds for this avatar.
+  Returns: {number}
+
+Player:getAccessWorlds()
+  Description: Returns the access worlds for this avatar.
+  Returns: {number}
+
+Player:getIPHistory()
+  Description: Returns the iphistory for this avatar.
+  Returns: {string}
+
+Player:getRIDHistory()
+  Description: Returns the ridhistory for this avatar.
+  Returns: {string}
+
+Player:getSmallLockedWorlds()
+  Description: Returns the small locked worlds for this avatar.
+  Returns: {number}
+
+Player:setBroadcastWorld(worldName)
+  Description: Sets the broadcast world for this avatar. It uses worldName.
+  Parameters: worldName
+  Returns: void
+
+Player:getFriends()
+  Description: Returns the friends for this avatar.
+  Returns: {number}
+
+Player:addFriend(second_player)
+  Description: Adds friend data or value to this avatar. It uses second_player.
+  Parameters: second_player
+  Returns: void
+
+Player:removeFriend(second_player)
+  Description: Removes the friend from this avatar. It uses second_player.
+  Parameters: second_player
+  Returns: void
+
+Player:getLifeGoals()
+  Description: Returns the life goals for this avatar.
+  Returns: {any}
+
+Player:getBiweeklyQuests()
+  Description: Returns the biweekly quests for this avatar.
+  Returns: {any}
+
+Player:getGrowpassPoints()
+  Description: Returns the growpass points for this avatar.
+  Returns: number
+
+Player:addGrowpassPoints(points)
+  Description: Adds growpass points data or value to this avatar. It uses points.
+  Parameters: points
+  Returns: void
+
+Player:setGrowpassPoints(points)
+  Description: Sets the growpass points for this avatar. It uses points.
+  Parameters: points
+  Returns: void
+
+Player:adjustBlockHitCount(adjust)
+  Description: Runs the adjust block hit count operation for this avatar. It uses adjust.
+  Parameters: adjust
+  Returns: void
+
+Player:getAdjustedBlockHitCount()
+  Description: Returns the adjusted block hit count for this avatar.
+  Returns: number
+
+Player:getPing()
+  Description: Returns the ping for this avatar.
+  Returns: number
+
+Player:getDungeonScrolls()
+  Description: Returns the dungeon scrolls for this avatar.
+  Returns: number
+
+Player:setDungeonScrolls(scrolls)
+  Description: Sets the dungeon scrolls for this avatar. It uses scrolls.
+  Parameters: scrolls
+  Returns: void
+
+Player:hasGrowID()
+  Description: Checks whether this avatar has grow id.
+  Returns: boolean
+
+Player:addNote(note)
+  Description: Adds note data or value to this avatar. It uses note.
+  Parameters: note
+  Returns: void
+
+Player:setAAPEnabled(aapEnabled)
+  Description: Sets the aapenabled for this avatar. It uses aapEnabled.
+  Parameters: aapEnabled
+  Returns: void
+
+Player:setCustomAutofarmDelay(delay)
+  Description: Sets the custom autofarm delay for this avatar. It uses delay.
+  Parameters: delay
+  Returns: void
+
+Player:getGameVersion()
+  Description: Returns the game version for this avatar.
+  Returns: number
+
+Player:getItemEffects()
+  Description: Returns the item effects for this avatar.
+  Returns: any
+
+Player:visualPunch(tile)
+  Description: Runs the visual punch operation for this avatar. It uses tile.
+  Parameters: tile
+  Returns: void
+
+Player:visualBuild(tile)
+  Description: Runs the visual build operation for this avatar. It uses tile.
+  Parameters: tile
+  Returns: void
+
+Player:getLastOnline()
+  Description: Returns the last online for this avatar.
+  Returns: number
+
+Player:earnAchievement(type)
+  Description: Awards the achievement to this avatar. It uses type.
+  Parameters: type
+  Returns: void
+
+Player:getAchievements()
+  Description: Returns the achievements for this avatar.
+  Returns: {any}
+
+Player:getActivePet()
+  Description: Returns the active pet for this avatar.
+  Returns: any
+
+Player:getEffects()
+  Description: Returns { extra_gems, extra_xp, one_hit, break_range, build_range, drops = { { id, count, chance } } } for this avatar.
+  Returns: any
+
+Player:setEffects(effects)
+  Description: Sets the custom effects for this avatar. Takes a table { extra_gems, extra_xp, one_hit, break_range, build_range, drops = { { id, count, chance } } }. All five numeric fields are required; drops is optional and replaces the existing drops.
+  Parameters: effects
+  Returns: void
+
+Player:deleteEffects()
+  Description: Deletes the effects resource.
+  Returns: void
+
+Player:getOverlappingTiles()
+  Description: Returns array of overlapping tiles with player.
+  Returns: {Tile}
+
+Player:setLegendaryWizardTask(currentTaskNum)
+  Description: Set legendary wizard task ID for player.
+  Parameters: currentTaskNum
+  Returns: void
+
+Player:hasAccessToTile(tile, itemID, isSilent, ignoreReach)
+  Description: Check if player has access to tile.
+  Parameters: tile, itemID, isSilent, ignoreReach
+  Returns: boolean
+
+Player:isPublicTile(tile)
+  Description: Check whatever the tile is public to the player or not.
+  Parameters: tile
+  Returns: boolean
+
+Player:getState()
+  Description: Returns last registered state of the player.
+  Returns: number
+
+Player:hasRoleFlag(flag)
+  Description: Check if player has role flag, returns boolean.
+  Parameters: flag
+  Returns: boolean
+
+Player:moveToTile(tile)
+  Description: NPC only (created with world:createNPC). Pathfinds to the tile. Returns false if the path is blocked or the tile belongs to another world.
+  Parameters: tile
+  Returns: boolean
+
+Player:moveToPos(x, y)
+  Description: NPC only. Pathfinds to integer pixel coordinates inside the world. Returns false on failure.
+  Parameters: x, y
+  Returns: boolean
+
+Player:isMoving()
+  Description: NPC only. Returns true while the NPC is still following a path.
+  Returns: boolean
+
+Player:getMovementError()
+  Description: NPC only. Returns the last movement error message, or nil.
+  Returns: string?
+
+Player:setLifeGoalQuestProgress(taskID, value)
+  Description: Sets the completed value of the life goal task with the given task ID. Completes it when the target is reached.
+  Parameters: taskID, value
+  Returns: void
+
+Player:setBiweeklyQuestProgress(taskID, value)
+  Description: Sets the completed value of the biweekly quest task with the given task ID. Completes it when the target is reached.
+  Parameters: taskID, value
+  Returns: void
+
+Player:triggerFindGeiger()
+  Description: Triggers the found-Geiger event for this avatar in its current world.
+  Returns: void
+
+Player:setFishingWaitTime(time)
+  Description: Overrides the fishing wait time for this avatar.
+  Parameters: time
+  Returns: void
+
+Player:setSkinColor(r, g, b, a)
+  Description: Sets the skin color for this avatar and refreshes its appearance.
+  Parameters: r, g, b, a
+  Returns: void
+
+Player:createGuild(guildName, guildStatement)
+  Description: Creates a guild in the world the avatar owns. Errors if the avatar is already in a guild, doesn't own a World Lock world, or the name/statement is invalid (name 3-16 chars, statement 3-32 chars).
+  Parameters: guildName, guildStatement
+  Returns: void
+
+
+
+============================================================
+World
+============================================================
+Slug: world
+
+The World class represents a Growtopia world. Use these methods to manage tiles, players, drops, and world properties.
+
+------------------------------------------------------------
+World
+------------------------------------------------------------
+World:getName()
+  Description: Returns the name for this world.
+  Returns: string
+
+World:getOwner()
+  Description: Returns the owner for this world.
+  Returns: Player
+
+World:setOwner(user_id)
+  Description: Sets the owner for this world. It uses user_id.
+  Parameters: user_id
+  Returns: void
+
+World:removeOwner()
+  Description: Removes the owner from this world.
+  Returns: void
+
+World:addPunishment(player, type, expiresAt, reason, invoker_id)
+  Description: Adds a world punishment. expiresAt is stored as an absolute unix timestamp (use os.time() + seconds), not a duration.
+  Parameters: player, type, expiresAt, reason, invoker_id
+  Returns: void
+
+World:removePunishment(player, type)
+  Description: Removes the punishment from this world. It uses player, type.
+  Parameters: player, type
+  Returns: void
+
+World:getPunishment(player, type)
+  Description: Returns the punishment for this world.
+  Parameters: player, type
+  Returns: any
+
+World:getAllPunishments()
+  Description: Returns the all punishments for this world.
+  Returns: {any}
+
+World:getID()
+  Description: Returns the ID for this world.
+  Returns: number
+
+World:getTile(x, y)
+  Description: Returns the tile for this world.
+  Parameters: x, y
+  Returns: Tile
+
+World:spawnItem(x, y, itemID, itemCount, center_item)
+  Description: Spawns an item drop at the provided world coordinates. Returns the Drop, or nil if it couldn't spawn. center_item (1/0, default 1) adds a small random offset.
+  Parameters: x, y, itemID, itemCount, center_item
+  Returns: Drop?
+
+World:spawnGems(x, y, gemsCount, player)
+  Description: Spawns gem drops at the provided world coordinates, optionally attributed to a player.
+  Parameters: x, y, gemsCount, player
+  Returns: void
+
+World:adjustGems(player, tile, gemsCount, showParticles)
+  Description: Adjusts gems collected from a tile for the specified player and returns the gem count. showParticles: 1 shows particles.
+  Parameters: player, tile, gemsCount, showParticles
+  Returns: number
+
+World:onLoot(player, tile, gemsCount)
+  Description: Runs the world loot handling logic for a player and tile.
+  Parameters: player, tile, gemsCount
+  Returns: void
+
+World:useItemEffect(netID, itemID, secondNetID, effectDelay)
+  Description: Runs the use item effect operation for this world. It uses netID, itemID, secondNetID, effectDelay.
+  Parameters: netID, itemID, secondNetID, effectDelay
+  Returns: void
+
+World:useItemTileEffect(tile, netID, itemID, reverse, effectDelay)
+  Description: Runs the use item tile effect operation for this world. It uses tile, netID, itemID, reverse, effectDelay.
+  Parameters: tile, netID, itemID, reverse, effectDelay
+  Returns: void
+
+World:getPlayers()
+  Description: Returns the players for this world.
+  Returns: {Player}
+
+World:getPlayersCount(show_all)
+  Description: Returns the players count for this world.
+  Parameters: show_all
+  Returns: number
+
+World:getVisiblePlayersCount()
+  Description: Returns the visible players count for this world.
+  Returns: number
+
+World:isGameActive()
+  Description: Checks whether this world is game active.
+  Returns: boolean
+
+World:onGameWinHighestScore()
+  Description: Triggers the game win highest score behavior for this world.
+  Returns: void
+
+World:updateClothing(player)
+  Description: Updates the clothing for this world. It uses player.
+  Parameters: player
+  Returns: void
+
+World:onCreateChatBubble(posX, posY, message, persistMessage)
+  Description: Triggers the create chat bubble behavior for this world. It uses posX, posY, message, persistMessage.
+  Parameters: posX, posY, message, persistMessage
+  Returns: void
+
+World:onCreateExplosion(posX, posY, radius, power)
+  Description: Triggers the create explosion behavior for this world. It uses posX, posY, radius, power.
+  Parameters: posX, posY, radius, power
+  Returns: void
+
+World:setTileForeground(tile, id, visual_update, player)
+  Description: Sets the tile foreground for this world. It uses tile, id, optional visual_update, optional player.
+  Parameters: tile, id, visual_update, player
+  Returns: void
+
+World:setTileBackground(tile, id, visual_update, player)
+  Description: Sets the tile background for this world. It uses tile, id, optional visual_update, optional player.
+  Parameters: tile, id, visual_update, player
+  Returns: void
+
+World:getWorldSizeX()
+  Description: Returns the world size x for this world.
+  Returns: number
+
+World:getWorldSizeY()
+  Description: Returns the world size y for this world.
+  Returns: number
+
+World:getWorldType()
+  Description: Returns the world type for this world.
+  Returns: number
+
+World:getTiles()
+  Description: Returns the tiles for this world.
+  Returns: {Tile}
+
+World:getEmptyTiles()
+  Description: Returns the empty tiles for this world.
+  Returns: {Tile}
+
+World:getNoCollisionTiles()
+  Description: Returns the no collision tiles for this world.
+  Returns: {Tile}
+
+World:getDroppedItems()
+  Description: Returns the dropped items for this world.
+  Returns: {Drop}
+
+World:getTileDroppedItems(tile)
+  Description: Returns the tile dropped items for this world.
+  Parameters: tile
+  Returns: {Drop}
+
+World:addXP(player, xp_amount)
+  Description: Adds XP data or value to this world. It uses player, xp_amount.
+  Parameters: player, xp_amount
+  Returns: void
+
+World:setPlayerPosition(player, x, y, no_packet)
+  Description: Sets the player position for this world. It uses player, x, y, optional no_packet.
+  Parameters: player, x, y, no_packet
+  Returns: void
+
+World:removeDroppedItem(uid)
+  Description: Removes the dropped item from this world. It uses uid.
+  Parameters: uid
+  Returns: void
+
+World:removeDroppedItemsByID(id)
+  Description: Removes the dropped items by ID from this world. It uses id.
+  Parameters: id
+  Returns: void
+
+World:removeAllDroppedItems()
+  Description: Removes the all dropped items from this world.
+  Returns: void
+
+World:updateTile(tile, player)
+  Description: Updates the tile for this world. It uses tile, optional player.
+  Parameters: tile, player
+  Returns: void
+
+World:sendPlayerMessage(player, message)
+  Description: Sends the player message to the target client or service. It uses player, message.
+  Parameters: player, message
+  Returns: void
+
+World:punchTile(tile, player)
+  Description: Runs the punch tile operation for this world. It uses tile, optional player.
+  Parameters: tile, player
+  Returns: void
+
+World:placeTile(tile, id, player)
+  Description: Runs the place tile operation for this world. It uses tile, id, optional player.
+  Parameters: tile, id, player
+  Returns: void
+
+World:hasTileAccess(player, tile)
+  Description: Checks whether the player has access to the specified tile.
+  Parameters: player, tile
+  Returns: boolean
+
+World:hasAccess(player)
+  Description: Checks whether the player has world-level access.
+  Parameters: player
+  Returns: boolean
+
+World:addTileAccess(player, tile)
+  Description: Adds tile access data or value to this world. It uses player, tile.
+  Parameters: player, tile
+  Returns: void
+
+World:addAccess(player, admin_type)
+  Description: Adds access data or value to this world. It uses player, admin_type.
+  Parameters: player, admin_type
+  Returns: void
+
+World:removeTileAccess(player, tile)
+  Description: Removes the tile access from this world. It uses player, tile.
+  Parameters: player, tile
+  Returns: void
+
+World:removeAllTileAccess()
+  Description: Removes the all tile access from this world.
+  Returns: void
+
+World:removeAccess(player)
+  Description: Removes the access from this world. It uses player.
+  Parameters: player
+  Returns: void
+
+World:kill(player, force_respawn_on_white_door)
+  Description: Kills the player in this world and optionally forces respawn on the white door.
+  Parameters: player, force_respawn_on_white_door
+  Returns: void
+
+World:setClothing(player, item_id)
+  Description: Sets the clothing for this world. It uses player, item_id.
+  Parameters: player, item_id
+  Returns: void
+
+World:createNPC(name, x, y)
+  Description: Creates the NPC resource or entry. It uses name, x, y.
+  Parameters: name, x, y
+  Returns: Player
+
+World:removeNPC(player)
+  Description: Removes the NPC from this world. It uses player.
+  Parameters: player
+  Returns: void
+
+World:findNPCByName(name)
+  Description: Runs the find npcby name operation for this world. It uses name.
+  Parameters: name
+  Returns: {Player}
+
+World:getAllNPC()
+  Description: Returns the all NPC for this world.
+  Returns: {Player}
+
+World:redeemCode(player, code)
+  Description: Redeems the code for this world. It uses player, code.
+  Parameters: player, code
+  Returns: void
+
+World:setWeather(weatherID)
+  Description: Sets the weather for this world. It uses weatherID.
+  Parameters: weatherID
+  Returns: void
+
+World:getWorldLock()
+  Description: Returns the world lock for this world.
+  Returns: Tile
+
+World:getMagplantRemoteTile(player)
+  Description: Returns the magplant remote tile for this world.
+  Parameters: player
+  Returns: Tile
+
+World:setMagplantRemoteTile(player, tile)
+  Description: Sets the magplant remote tile for this world. It uses player, tile.
+  Parameters: player, tile
+  Returns: void
+
+World:hasFlag(flag)
+  Description: Checks whether this world has flag. It uses flag.
+  Parameters: flag
+  Returns: boolean
+
+World:addFlag(flag)
+  Description: Adds flag data or value to this world. It uses flag.
+  Parameters: flag
+  Returns: void
+
+World:useConsumable(player, tile, id, noCallback)
+  Description: Uses a consumable item for a player on a tile, optionally skipping callback execution.
+  Parameters: player, tile, id, noCallback
+  Returns: void
+
+World:spawnGhost(tile, id, sb, wd, sp)
+  Description: Spawns ghost in the relevant game context. It uses tile, id, sb, wd, sp.
+  Parameters: tile, id, sb, wd, sp
+  Returns: void
+
+World:findPathByTile(tile_1, tile_2, max_rad_x, max_rad_y)
+  Description: Runs the find path by tile operation for this world. It uses tile_1, tile_2, max_rad_x, max_rad_y.
+  Parameters: tile_1, tile_2, max_rad_x, max_rad_y
+  Returns: {any}
+
+World:isNuked()
+  Description: Checks whether this world is nuked.
+  Returns: boolean
+
+World:nuke(ownerBanTime, adminsBanTime, everyoneElseBanTime)
+  Description: Nukes the world. Ban times are in minutes; pass 0 to skip that group.
+  Parameters: ownerBanTime, adminsBanTime, everyoneElseBanTime
+  Returns: void
+
+World:removeNuke(unbanBannedUsers)
+  Description: Removes the nuke from this world. Pass 1 to also unban the users banned by it.
+  Parameters: unbanBannedUsers
+  Returns: void
+
+World:getGuildID()
+  Description: Returns the guild ID for this world.
+  Returns: number
+
+World:getMachineCap(item_id)
+  Description: Returns the machine cap for this world.
+  Parameters: item_id
+  Returns: number
+
+World:setMachineCap(item_id, item_count)
+  Description: Sets the machine cap for this world. It uses item_id, item_count.
+  Parameters: item_id, item_count
+  Returns: void
+
+World:getMachineCaps()
+  Description: Returns the machine caps for this world.
+  Returns: {any}
+
+World:removeMachineCap(item_id)
+  Description: Removes the machine cap from this world. It uses item_id.
+  Parameters: item_id
+  Returns: void
+
+World:getEffects()
+  Description: Returns { extra_gems, extra_xp, one_hit, break_range, build_range, drops = { { id, count, chance } } } for this world.
+  Returns: any
+
+World:setEffects(effects)
+  Description: Sets the custom effects for this world. Takes a table { extra_gems, extra_xp, one_hit, break_range, build_range, drops = { { id, count, chance } } }. All five numeric fields are required; drops is optional and replaces the existing drops.
+  Parameters: effects
+  Returns: void
+
+World:deleteEffects()
+  Description: Deletes the effects resource.
+  Returns: void
+
+World:getCached(item_id)
+  Description: Returns the cached for this world.
+  Parameters: item_id
+  Returns: {Tile}
+
+World:delete()
+  Description: Runs the delete operation for this world.
+  Returns: void
+
+World:save()
+  Description: Runs the save operation for this world.
+  Returns: void
+
+World:new(name, sizeX, sizeY, worldType)
+  Description: Static: World.new(...). Creates a new unsaved world. Size max 255x255; worldType must be a valid world type.
+  Parameters: name, sizeX, sizeY, worldType
+  Returns: World
+
+World:newFromTemplate(name, templateName)
+  Description: Static: World.newFromTemplate(...). Creates a new world from an exported template file.
+  Parameters: name, templateName
+  Returns: World
+
+World:newFromGlobalTemplate(name, templateName)
+  Description: Static: World.newFromGlobalTemplate(...). Creates a new world from a global template file.
+  Parameters: name, templateName
+  Returns: World
+
+World:hasAccessByType(player, adminType)
+  Description: Checks whether the player has the given admin type in this world.
+  Parameters: player, adminType
+  Returns: boolean
+
+World:setTileOwner(tile, userID)
+  Description: Changes the owner of a small lock tile (and every tile it controls) to the given user ID.
+  Parameters: tile, userID
+  Returns: void
+
+World:export()
+  Description: Exports this world to a .dat file named after the world (max 100 exports). Errors on an unsafe world name.
+  Returns: void
+
+World:import(importName)
+  Description: Imports a previously exported .dat file into this world. Errors if the file doesn't exist or the world is a guild world.
+  Parameters: importName
+  Returns: void
+
+
+
+============================================================
+Tile
+============================================================
+Slug: tile
+
+The Tile class represents a single tile in a world. Access tile properties like foreground, background, and flags.
+
+------------------------------------------------------------
+Tile
+------------------------------------------------------------
+Tile:getTileID()
+  Description: Returns the tile ID for this tile.
+  Returns: number
+
+Tile:getTileItem()
+  Description: Returns the tile item for this tile.
+  Returns: Item
+
+Tile:getLastPunched()
+  Description: Returns the last punched for this tile.
+  Returns: number
+
+Tile:getPosX()
+  Description: Returns the tile X position in pixels (tile X * 32).
+  Returns: number
+
+Tile:getPosY()
+  Description: Returns the tile Y position in pixels (tile Y * 32).
+  Returns: number
+
+Tile:getNote()
+  Description: Returns the note for this tile.
+  Returns: string
+
+Tile:getTileForeground()
+  Description: Returns the tile foreground for this tile.
+  Returns: number
+
+Tile:getTileBackground()
+  Description: Returns the tile background for this tile.
+  Returns: number
+
+Tile:getTileData(data_type)
+  Description: Returns extra tile data. data_type: 0 seed fruits, 1 seed planted time, 2 magplant count, 3 vending count, 4 sign text, 5 door text, 6 door open, 7 door destination, 8 door ID, 9 vending item ID, 10 vending price, 11 vending earned, 12 display block item ID, 13 magplant item ID, 14 magplant active, 15 magplant magnet, 16 magplant space, 17 magplant gems, 18 magplant second item ID, 19 magplant enabled, 20 magplant harvest trees, 21 magplant collect seeds.
+  Parameters: data_type
+  Returns: any
+
+Tile:setTileData(data_type, data_value)
+  Description: Sets extra tile data. Same data_type values as getTileData. Boolean fields take 1 or 0.
+  Parameters: data_type, data_value
+  Returns: void
+
+Tile:setTileDataInt(data_type, data_value)
+  Description: Alias of setTileData.
+  Parameters: data_type, data_value
+  Returns: void
+
+Tile:getFlags()
+  Description: Returns the flags for this tile.
+  Returns: number
+
+Tile:setFlags(flags)
+  Description: Sets the flags for this tile. It uses flags.
+  Parameters: flags
+  Returns: void
+
+
+
+============================================================
+Item
+============================================================
+Slug: item
+
+The Item class represents an item definition. Access item properties and metadata.
+
+------------------------------------------------------------
+Item
+------------------------------------------------------------
+Item:getPlaymods()
+  Description: Returns the playmods for this item.
+  Returns: {any}
+
+Item:getName()
+  Description: Returns the name for this item.
+  Returns: string
+
+Item:setName(value)
+  Description: Sets the name for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:getDescription()
+  Description: Returns the description for this item.
+  Returns: string
+
+Item:getID()
+  Description: Returns the ID for this item.
+  Returns: number
+
+Item:getPrice()
+  Description: Returns the price for this item.
+  Returns: number
+
+Item:setPrice(newPrice)
+  Description: Sets the price for this item. It uses newPrice.
+  Parameters: newPrice
+  Returns: void
+
+Item:isObtainable()
+  Description: Checks whether this item is obtainable.
+  Returns: boolean
+
+Item:getInfo()
+  Description: Returns the info for this item.
+  Returns: {string}
+
+Item:getActionType()
+  Description: Returns the action type for this item.
+  Returns: number
+
+Item:getRarity()
+  Description: Returns the rarity for this item.
+  Returns: number
+
+Item:getGems(world, player)
+  Description: Returns the gems for this item.
+  Parameters: world, player
+  Returns: number
+
+Item:getXP(world, player)
+  Description: Returns the XP for this item.
+  Parameters: world, player
+  Returns: number
+
+Item:getGrowTime()
+  Description: Returns the grow time for this item.
+  Returns: number
+
+Item:getCategoryType()
+  Description: Returns the category type for this item.
+  Returns: number
+
+Item:getEditableType()
+  Description: Returns the editable type for this item.
+  Returns: number
+
+Item:setCategoryType(value)
+  Description: Sets the category type for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:setEditableType(value)
+  Description: Sets the editable type for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:setGrowTime(value)
+  Description: Sets the grow time for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:setActionType(value)
+  Description: Sets the action type for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:setDescription(value)
+  Description: Sets the description for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:getTexture()
+  Description: Returns the texture for this item.
+  Returns: string
+
+Item:getTextureHash()
+  Description: Returns the texture hash for this item.
+  Returns: number
+
+Item:setTextureHash(hash)
+  Description: Sets the texture hash for this item. It uses hash.
+  Parameters: hash
+  Returns: void
+
+Item:getTextureX()
+  Description: Returns the texture x for this item.
+  Returns: number
+
+Item:getTextureY()
+  Description: Returns the texture y for this item.
+  Returns: number
+
+Item:setTexture(value)
+  Description: Sets the texture for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:setTextureX(x)
+  Description: Sets the texture x for this item. It uses x.
+  Parameters: x
+  Returns: void
+
+Item:setTextureY(y)
+  Description: Sets the texture y for this item. It uses y.
+  Parameters: y
+  Returns: void
+
+Item:getClothingType()
+  Description: Returns the clothing type for this item.
+  Returns: number
+
+Item:setClothingType(value)
+  Description: Sets the clothing type for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:getPricedRarity()
+  Description: Returns the priced rarity for this item.
+  Returns: number
+
+Item:getEffects()
+  Description: Returns { extra_gems, extra_xp, one_hit, break_range, build_range, drops = { { id, count, chance } } } for this item.
+  Returns: any
+
+Item:setEffects(effects)
+  Description: Sets the custom effects for this item. Takes a table { extra_gems, extra_xp, one_hit, break_range, build_range, drops = { { id, count, chance } } }. All five numeric fields are required; drops is optional and replaces the existing drops.
+  Parameters: effects
+  Returns: void
+
+Item:deleteEffects()
+  Description: Deletes the effects resource.
+  Returns: void
+
+Item:getObtainability()
+  Description: Returns the obtainability for this item.
+  Returns: string
+
+Item:getMachineCap()
+  Description: Returns the machine cap for this item.
+  Returns: number
+
+Item:setMachineCap(value)
+  Description: Sets the machine cap for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:removeMachineCap()
+  Description: Removes the machine cap from this item.
+  Returns: void
+
+Item:getFarmability()
+  Description: Returns the farmability for this item.
+  Returns: boolean
+
+Item:setFarmability(value)
+  Description: Sets the farmability for this item. It uses value.
+  Parameters: value
+  Returns: void
+
+Item:getMaxFruitDropCount()
+  Description: Returns the max fruit drop count for this item.
+  Returns: number
+
+Item:getMinFruitDropCount()
+  Description: Returns the min fruit drop count for this item.
+  Returns: number
+
+Item:getSpreadType()
+  Description: Returns the spread type for this item.
+  Returns: number
+
+Item:setSpreadType(value)
+  Description: Sets the spread type for this item.
+  Parameters: value
+  Returns: void
+
+Item:getCollisionType()
+  Description: Returns the collision type for this item.
+  Returns: number
+
+Item:setCollisionType(value)
+  Description: Sets the collision type for this item.
+  Parameters: value
+  Returns: void
+
+Item:getKindType()
+  Description: Returns the item kind for this item.
+  Returns: number
+
+Item:setKindType(value)
+  Description: Sets the item kind for this item.
+  Parameters: value
+  Returns: void
+
+Item:getChi()
+  Description: Returns the chi element: 0 Earth, 1 Fire, 2 other, 3 Water, 4 none (clothes).
+  Returns: number
+
+
+
+============================================================
+IOTM
+============================================================
+Slug: iotm
+
+Methods and properties for the IOTM class.
+
+------------------------------------------------------------
+IOTM
+------------------------------------------------------------
+IOTM:getID()
+  Description: Returns the ID for this iotm.
+  Returns: number
+
+IOTM:getAmount()
+  Description: Returns the amount for this iotm.
+  Returns: number
+
+IOTM:setAmount(newAmount)
+  Description: Sets the amount for this iotm. It uses newAmount.
+  Parameters: newAmount
+  Returns: void
+
+
+
+============================================================
+Guild
+============================================================
+Slug: guild
+
+Methods and properties for the Guild class.
+
+------------------------------------------------------------
+Guild
+------------------------------------------------------------
+Guild:getTitle()
+  Description: Returns the title for this guild.
+  Returns: string
+
+Guild:getDescription()
+  Description: Returns the description for this guild.
+  Returns: string
+
+Guild:getNotebook()
+  Description: Returns the notebook for this guild.
+  Returns: string
+
+Guild:getID()
+  Description: Returns the ID for this guild.
+  Returns: number
+
+Guild:getWorldID()
+  Description: Returns the world ID for this guild.
+  Returns: number
+
+Guild:getXP()
+  Description: Returns the XP for this guild.
+  Returns: number
+
+Guild:getLevel()
+  Description: Returns the level for this guild.
+  Returns: number
+
+Guild:getPoints()
+  Description: Returns the points for this guild.
+  Returns: number
+
+Guild:getSettings()
+  Description: Returns the settings for this guild.
+  Returns: number
+
+Guild:getCreatedDate()
+  Description: Returns the created date for this guild.
+  Returns: number
+
+Guild:getMascotForegroundID()
+  Description: Returns the mascot foreground ID for this guild.
+  Returns: number
+
+Guild:getMascotBackgroundID()
+  Description: Returns the mascot background ID for this guild.
+  Returns: number
+
+Guild:getDisplayGuildMascot()
+  Description: Returns the display guild mascot for this guild.
+  Returns: number
+
+Guild:getOnlinePlayers()
+  Description: Returns the online players for this guild.
+  Returns: {Player}
+
+Guild:setXP(xp)
+  Description: Sets the guild XP, capped just below the XP needed for the next level.
+  Parameters: xp
+  Returns: void
+
+Guild:addXP(xp)
+  Description: Adds XP to the guild and handles level ups.
+  Parameters: xp
+  Returns: void
+
+Guild:setLevel(level)
+  Description: Sets the guild level (max 15).
+  Parameters: level
+  Returns: void
+
+
+
+============================================================
+ShopItem
+============================================================
+Slug: shop-item
+
+Methods and properties for the ShopItem class.
+
+------------------------------------------------------------
+ShopItem
+------------------------------------------------------------
+ShopItem:getCategory()
+  Description: Returns the category for this shop item.
+  Returns: string
+
+ShopItem:getTexture()
+  Description: Returns the texture for this shop item.
+  Returns: string
+
+ShopItem:getTexturePosX()
+  Description: Returns the texture pos x for this shop item.
+  Returns: number
+
+ShopItem:getTexturePosY()
+  Description: Returns the texture pos y for this shop item.
+  Returns: number
+
+ShopItem:getItemID()
+  Description: Returns the item ID for this shop item.
+  Returns: number
+
+ShopItem:getTitle()
+  Description: Returns the title for this shop item.
+  Returns: string
+
+ShopItem:getDescription()
+  Description: Returns the description for this shop item.
+  Returns: string
+
+ShopItem:getPrice()
+  Description: Returns the price for this shop item.
+  Returns: number
+
+ShopItem:isRPC()
+  Description: Checks whether this shop item is rpc.
+  Returns: boolean
+
+ShopItem:isGrowtoken()
+  Description: Checks whether this shop item is growtoken.
+  Returns: boolean
+
+ShopItem:isVoucher()
+  Description: Checks whether this shop item is voucher.
+  Returns: boolean
+
+ShopItem:getRequiredEvent()
+  Description: Returns the required event for this shop item.
+  Returns: number
+
+ShopItem:getItemsDescription()
+  Description: Returns the items description for this shop item.
+  Returns: string
+
+ShopItem:getItems()
+  Description: Returns the items for this shop item.
+  Returns: {any}
+
+ShopItem:makePurchaseItems(Count)
+  Description: Runs the make purchase items operation for this shop item. It uses Count.
+  Parameters: Count
+  Returns: {any}
+
+ShopItem:getRollAmount()
+  Description: Returns the roll amount for this shop item.
+  Returns: number
+
+ShopItem:isRandom()
+  Description: Checks whether this shop item is random.
+  Returns: boolean
+
+
+
+============================================================
+GrowtopiaBot
+============================================================
+Slug: growtopia-bot
+
+Methods and properties for the GrowtopiaBot class.
+
+------------------------------------------------------------
+GrowtopiaBot
+------------------------------------------------------------
+GrowtopiaBot:start()
+  Description: Runs the start operation for this growtopia bot.
+  Returns: void
+
+GrowtopiaBot:onReceiveVariantCallback(callback)
+  Description: Sets the callback that runs when the bot receives a variant packet.
+  Parameters: callback
+  Returns: void
+
+GrowtopiaBot:onReceiveTextCallback(callback)
+  Description: Sets the callback that runs when the bot receives a text packet.
+  Parameters: callback
+  Returns: void
+
+GrowtopiaBot:onReceiveRawCallback(callback)
+  Description: Sets the callback that runs when the bot receives a raw game packet.
+  Parameters: callback
+  Returns: void
+
+GrowtopiaBot:onReceiveTrackCallback(callback)
+  Description: Sets the callback that runs when the bot receives a track packet.
+  Parameters: callback
+  Returns: void
+
+GrowtopiaBot:sendStr(type, str)
+  Description: Sends the str to the target client or service. It uses type, str.
+  Parameters: type, str
+  Returns: void
+
+GrowtopiaBot:sendRaw(data)
+  Description: Sends the raw to the target client or service. It uses data.
+  Parameters: data
+  Returns: void
+
+GrowtopiaBot:reconnect()
+  Description: Runs the reconnect operation for this growtopia bot.
+  Returns: void
+
+GrowtopiaBot:new(token)
+  Description: Static: GrowtopiaBot.new(token). Validates the bot verification token with the controller and creates a bot. Errors if the token is invalid.
+  Parameters: token
+  Returns: GrowtopiaBot
+
+
+
+============================================================
+Drop
+============================================================
+Slug: drop
+
+Methods and properties for the Drop class.
+
+------------------------------------------------------------
+Drop
+------------------------------------------------------------
+Drop:getItemID()
+  Description: Returns the item ID for this drop.
+  Returns: number
+
+Drop:getItemCount()
+  Description: Returns the item count for this drop.
+  Returns: number
+
+Drop:getPosX()
+  Description: Returns the pos x for this drop.
+  Returns: number
+
+Drop:getPosY()
+  Description: Returns the pos y for this drop.
+  Returns: number
+
+Drop:getUID()
+  Description: Returns the uid for this drop.
+  Returns: number
+
+Drop:getFlags()
+  Description: Returns the flags for this drop.
+  Returns: number
+
+
+
+============================================================
+PlayerAutofarm
+============================================================
+Slug: player-autofarm
+
+Methods and properties for the PlayerAutofarm class.
+
+------------------------------------------------------------
+PlayerAutofarm
+------------------------------------------------------------
+PlayerAutofarm:getTargetBlockID()
+  Description: Returns the target block ID for this avatar player autofarm.
+  Returns: number
+
+PlayerAutofarm:setTargetBlockID(targetBlock)
+  Description: Sets the target block ID for this avatar player autofarm. It uses targetBlock.
+  Parameters: targetBlock
+  Returns: void
+
+PlayerAutofarm:getNextPosX()
+  Description: Returns the next pos x for this avatar player autofarm.
+  Returns: number
+
+PlayerAutofarm:setNextPosX(x)
+  Description: Sets the next pos x for this avatar player autofarm. It uses x.
+  Parameters: x
+  Returns: void
+
+PlayerAutofarm:getNextPosY()
+  Description: Returns the next pos y for this avatar player autofarm.
+  Returns: number
+
+PlayerAutofarm:setNextPosY(y)
+  Description: Sets the next pos y for this avatar player autofarm. It uses y.
+  Parameters: y
+  Returns: void
+
+PlayerAutofarm:getDelay()
+  Description: Returns the delay for this avatar player autofarm.
+  Returns: number
+
+PlayerAutofarm:setDelay(autofarmDelay)
+  Description: Sets the delay for this avatar player autofarm. It uses autofarmDelay.
+  Parameters: autofarmDelay
+  Returns: void
+
+PlayerAutofarm:getSlots()
+  Description: Returns the slots for this avatar player autofarm.
+  Returns: number
+
+PlayerAutofarm:setSlots(autofarmSlots)
+  Description: Sets the slots for this avatar player autofarm. It uses autofarmSlots.
+  Parameters: autofarmSlots
+  Returns: void
+
+
+
+============================================================
+InventoryItem
+============================================================
+Slug: inventory-item
+
+Methods and properties for the InventoryItem class.
+
+------------------------------------------------------------
+InventoryItem
+------------------------------------------------------------
+InventoryItem:getItemID()
+  Description: Returns the item ID for this avatar player inventory item.
+  Returns: number
+
+InventoryItem:getItemCount()
+  Description: Returns the item count for this avatar player inventory item.
+  Returns: number
+
+
+
+============================================================
+PlayerSubscription
+============================================================
+Slug: player-subscription
+
+Methods and properties for the PlayerSubscription class.
+
+------------------------------------------------------------
+PlayerSubscription
+------------------------------------------------------------
+PlayerSubscription:getType()
+  Description: Returns the type for this avatar player subscription.
+  Returns: number
+
+PlayerSubscription:getExpireTime()
+  Description: Returns the expire time for this avatar player subscription.
+  Returns: number
+
+PlayerSubscription:getActivationTime()
+  Description: Returns the activation time for this avatar player subscription.
+  Returns: number
+
+PlayerSubscription:isPermanent()
+  Description: Checks whether this avatar player subscription is permanent.
+  Returns: boolean
+
+PlayerSubscription:getNextRewardTime()
+  Description: Returns the next reward time for this avatar player subscription.
+  Returns: number
+
+
+
+============================================================
+DiscordBot
+============================================================
+Slug: discord-bot
+
+Methods and properties for the DiscordBot class.
+
+------------------------------------------------------------
+DiscordBot
+------------------------------------------------------------
+DiscordBot:messageCreate(channelID, content, components, flags, type, embed, attachments)
+  Description: Sends a message to a channel. Returns a request object. Optional: flags, type, embed, attachments (see LuaDiscordHelpers.h). components = { { {type="button", label, style="primary|secondary|success|danger", id, emoji} } } (each inner table is one action row); embed = { title, description, color, url, image, thumbnail, footer, timestamp, author = {name, icon}, fields = { {name, value, inline} } } (image, thumbnail and url accept a string or { url = ... }). Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: channelID, content, components, flags, type, embed, attachments
+  Returns: any
+
+DiscordBot:directMessageCreate(userID, content, components, flags, type, embed, attachments)
+  Description: Sends a direct message to a user. components = { { {type="button", label, style="primary|secondary|success|danger", id, emoji} } } (each inner table is one action row); embed = { title, description, color, url, image, thumbnail, footer, timestamp, author = {name, icon}, fields = { {name, value, inline} } } (image, thumbnail and url accept a string or { url = ... }). Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: userID, content, components, flags, type, embed, attachments
+  Returns: void
+
+DiscordBot:messageDelete(messageID, channelID)
+  Description: Deletes a message. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: messageID, channelID
+  Returns: void
+
+DiscordBot:messageEdit(messageID, channelID, content, components, flags, type, embed)
+  Description: Edits a message's content, components and embed. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: messageID, channelID, content, components, flags, type, embed
+  Returns: void
+
+DiscordBot:globalCommandCreate(name, description, options)
+  Description: Registers a global slash command. options = { {type="string|integer|user", name, description, required} }. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: name, description, options
+  Returns: void
+
+DiscordBot:guildMemberSetNickname(guildID, userID, nick)
+  Description: Sets a guild member nickname. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: guildID, userID, nick
+  Returns: void
+
+DiscordBot:guildMemberRemoveRole(guildID, userID, roleID)
+  Description: Removes a role from a guild member. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: guildID, userID, roleID
+  Returns: void
+
+DiscordBot:guildMemberAddRole(guildID, userID, roleID)
+  Description: Adds a role to a guild member. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: guildID, userID, roleID
+  Returns: void
+
+DiscordBot:guildMemberGetRoles(guildID, userID, callback)
+  Description: Fetches a member's role IDs (as strings) and passes them as a table to callback. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: guildID, userID, callback
+  Returns: void
+
+DiscordBot:channelCreate(guildID, options)
+  Description: Creates a text channel in the guild. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: guildID, options
+  Returns: any
+
+DiscordBot:channelEdit(channelID, options)
+  Description: Edits a channel. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: channelID, options
+  Returns: any
+
+DiscordBot:channelDelete(channelID)
+  Description: Deletes a channel. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: channelID
+  Returns: any
+
+DiscordBot:channelGet(channelID)
+  Description: Fetches a channel. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: channelID
+  Returns: any
+
+DiscordBot:guildGetChannels(guildID)
+  Description: Fetches all channels of a guild. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: guildID
+  Returns: any
+
+DiscordBot:messagePin(messageID, channelID)
+  Description: Pins a message. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: messageID, channelID
+  Returns: any
+
+DiscordBot:messageUnpin(messageID, channelID)
+  Description: Unpins a message. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: messageID, channelID
+  Returns: any
+
+DiscordBot:messageAddReaction(messageID, channelID, emoji)
+  Description: Adds a reaction to a message. Returns a request object. Call with a dot, not a colon (DiscordBot.method(...)), because argument 1 is the first real argument.
+  Parameters: messageID, channelID, emoji
+  Returns: any
+
+
+
+============================================================
+DiscordButtonClickEvent
+============================================================
+Slug: discord-button-click-event
+
+Methods and properties for the DiscordButtonClickEvent class.
+
+------------------------------------------------------------
+DiscordButtonClickEvent
+------------------------------------------------------------
+DiscordButtonClickEvent:getCustomID()
+  Description: Returns the custom ID for this discord button click event.
+  Returns: string
+
+DiscordButtonClickEvent:getPlayer()
+  Description: Returns the player for this discord button click event.
+  Returns: Player
+
+DiscordButtonClickEvent:getChannelID()
+  Description: Returns the channel ID for this discord button click event.
+  Returns: string
+
+DiscordButtonClickEvent:getAuthorID()
+  Description: Returns the author ID for this discord button click event.
+  Returns: string
+
+DiscordButtonClickEvent:reply(content, components, flags, embed, attachments)
+  Description: Replies to the interaction. components = { { {type="button", label, style="primary|secondary|success|danger", id, emoji} } } (each inner table is one action row); embed = { title, description, color, url, image, thumbnail, footer, timestamp, author = {name, icon}, fields = { {name, value, inline} } } (image, thumbnail and url accept a string or { url = ... }).
+  Parameters: content, components, flags, embed, attachments
+  Returns: void
+
+DiscordButtonClickEvent:dialog(modal)
+  Description: Opens a modal form. Takes { id, title, components = { {type="text", id, label, placeholder, min, max, style="short|paragraph"} } }.
+  Parameters: modal
+  Returns: void
+
+DiscordButtonClickEvent:getMessageID()
+  Description: Returns the message ID for this discord button click event.
+  Returns: string
+
+DiscordButtonClickEvent:editOriginalResponse(content, components, flags, embed, attachments)
+  Description: Edits the original interaction response.
+  Parameters: content, components, flags, embed, attachments
+  Returns: void
+
+DiscordButtonClickEvent:getRoles()
+  Description: Returns the roles for this discord button click event.
+  Returns: {string}
+
+DiscordButtonClickEvent:delete()
+  Description: Deletes the message the button is attached to.
+  Returns: void
+
+
+
+============================================================
+DiscordFormSubmitEvent
+============================================================
+Slug: discord-form-submit-event
+
+Methods and properties for the DiscordFormSubmitEvent class.
+
+------------------------------------------------------------
+DiscordFormSubmitEvent
+------------------------------------------------------------
+DiscordFormSubmitEvent:getCustomID()
+  Description: Returns the custom ID for this discord form submit event.
+  Returns: string
+
+DiscordFormSubmitEvent:getPlayer()
+  Description: Returns the player for this discord form submit event.
+  Returns: Player
+
+DiscordFormSubmitEvent:getChannelID()
+  Description: Returns the channel ID for this discord form submit event.
+  Returns: string
+
+DiscordFormSubmitEvent:getAuthorID()
+  Description: Returns the author ID for this discord form submit event.
+  Returns: string
+
+DiscordFormSubmitEvent:getValue(id)
+  Description: Returns the value for this discord form submit event.
+  Parameters: id
+  Returns: string
+
+DiscordFormSubmitEvent:reply(content, components, flags, embed, attachments)
+  Description: Replies to the interaction. components = { { {type="button", label, style="primary|secondary|success|danger", id, emoji} } } (each inner table is one action row); embed = { title, description, color, url, image, thumbnail, footer, timestamp, author = {name, icon}, fields = { {name, value, inline} } } (image, thumbnail and url accept a string or { url = ... }).
+  Parameters: content, components, flags, embed, attachments
+  Returns: void
+
+DiscordFormSubmitEvent:getMessageID()
+  Description: Returns the message ID for this discord form submit event.
+  Returns: string
+
+DiscordFormSubmitEvent:getRoles()
+  Description: Returns the roles for this discord form submit event.
+  Returns: {string}
+
+DiscordFormSubmitEvent:delete()
+  Description: Deletes the source message. Errors if the form was opened from a slash command.
+  Returns: void
+
+DiscordFormSubmitEvent:editOriginalResponse(content, components, flags, embed, attachments)
+  Description: Edits the original interaction response.
+  Parameters: content, components, flags, embed, attachments
+  Returns: void
+
+
+
+============================================================
+DiscordMessageCreateEvent
+============================================================
+Slug: discord-message-create-event
+
+Methods and properties for the DiscordMessageCreateEvent class.
+
+------------------------------------------------------------
+DiscordMessageCreateEvent
+------------------------------------------------------------
+DiscordMessageCreateEvent:getContent()
+  Description: Returns the content for this discord message create event.
+  Returns: string
+
+DiscordMessageCreateEvent:getPlayer()
+  Description: Returns the player for this discord message create event.
+  Returns: Player
+
+DiscordMessageCreateEvent:getChannelID()
+  Description: Returns the channel ID for this discord message create event.
+  Returns: string
+
+DiscordMessageCreateEvent:getAuthorID()
+  Description: Returns the author ID for this discord message create event.
+  Returns: string
+
+DiscordMessageCreateEvent:isBot()
+  Description: Checks whether this discord message create event is bot.
+  Returns: boolean
+
+DiscordMessageCreateEvent:reply(content, components, flags, mention_replied_user, embed)
+  Description: Replies to the message. components = { { {type="button", label, style="primary|secondary|success|danger", id, emoji} } } (each inner table is one action row); embed = { title, description, color, url, image, thumbnail, footer, timestamp, author = {name, icon}, fields = { {name, value, inline} } } (image, thumbnail and url accept a string or { url = ... }).
+  Parameters: content, components, flags, mention_replied_user, embed
+  Returns: void
+
+DiscordMessageCreateEvent:getMentionedUsers()
+  Description: Returns the mentioned users for this discord message create event.
+  Returns: {string}
+
+DiscordMessageCreateEvent:getMessageID()
+  Description: Returns the message ID for this discord message create event.
+  Returns: string
+
+DiscordMessageCreateEvent:getRoles()
+  Description: Returns the roles for this discord message create event.
+  Returns: {string}
+
+DiscordMessageCreateEvent:delete()
+  Description: Deletes the message this event was created for.
+  Returns: void
+
+
+
+============================================================
+DiscordSlashCommandEvent
+============================================================
+Slug: discord-slash-command-event
+
+Methods and properties for the DiscordSlashCommandEvent class.
+
+------------------------------------------------------------
+DiscordSlashCommandEvent
+------------------------------------------------------------
+DiscordSlashCommandEvent:getCommandName()
+  Description: Returns the command name for this discord slash command event.
+  Returns: string
+
+DiscordSlashCommandEvent:getParameter(parameter)
+  Description: Returns the parameter for this discord slash command event.
+  Parameters: parameter
+  Returns: string
+
+DiscordSlashCommandEvent:getPlayer()
+  Description: Returns the player for this discord slash command event.
+  Returns: Player
+
+DiscordSlashCommandEvent:getChannelID()
+  Description: Returns the channel ID for this discord slash command event.
+  Returns: string
+
+DiscordSlashCommandEvent:getAuthorID()
+  Description: Returns the author ID for this discord slash command event.
+  Returns: string
+
+DiscordSlashCommandEvent:reply(channelID, content, components, flags, embed, attachments)
+  Description: Replies to the slash command. components = { { {type="button", label, style="primary|secondary|success|danger", id, emoji} } } (each inner table is one action row); embed = { title, description, color, url, image, thumbnail, footer, timestamp, author = {name, icon}, fields = { {name, value, inline} } } (image, thumbnail and url accept a string or { url = ... }).
+  Parameters: channelID, content, components, flags, embed, attachments
+  Returns: void
+
+DiscordSlashCommandEvent:editOriginalResponse(channelID, content, components, flags, embed, attachments)
+  Description: Edits the original slash command response.
+  Parameters: channelID, content, components, flags, embed, attachments
+  Returns: void
+
+DiscordSlashCommandEvent:dialog(modal)
+  Description: Opens a modal form. Takes { id, title, components = { {type="text", id, label, placeholder, min, max, style="short|paragraph"} } }.
+  Parameters: modal
+  Returns: void
+
+DiscordSlashCommandEvent:thinking(ephemeral)
+  Description: Runs the thinking operation for this discord slash command event. It uses optional ephemeral.
+  Parameters: ephemeral
+  Returns: void
+
+DiscordSlashCommandEvent:getRoles()
+  Description: Returns the roles for this discord slash command event.
+  Returns: {string}
+
+DiscordSlashCommandEvent:delete()
+  Description: Deletes the original interaction response.
+  Returns: void
+
+
+
+============================================================
+Font
+============================================================
+Slug: font
+
+Methods and properties for the Font class.
+
+------------------------------------------------------------
+Font
+------------------------------------------------------------
+Font:loadFromFile(path)
+  Description: Loads from file from storage or server state. It uses path.
+  Parameters: path
+  Returns: void
+
+Font:new()
+  Description: Runs the new operation for this font.
+  Returns: Font
+
+
+
+============================================================
+RenderTexture
+============================================================
+Slug: render-texture
+
+Methods and properties for the RenderTexture class.
+
+------------------------------------------------------------
+RenderTexture
+------------------------------------------------------------
+RenderTexture:getWidth()
+  Description: Returns the width for this render texture.
+  Returns: number
+
+RenderTexture:getHeight()
+  Description: Returns the height for this render texture.
+  Returns: number
+
+RenderTexture:clear(r, g, b, a)
+  Description: Runs the clear operation for this render texture. It uses r, g, b, a.
+  Parameters: r, g, b, a
+  Returns: void
+
+RenderTexture:saveToFile(path)
+  Description: Saves to file to persistent storage. It uses path.
+  Parameters: path
+  Returns: void
+
+RenderTexture:draw(sprite)
+  Description: Draws a sprite onto this render texture.
+  Parameters: sprite
+  Returns: void
+
+RenderTexture:display()
+  Description: Runs the display operation for this render texture.
+  Returns: void
+
+RenderTexture:drawText(font, str, x, y, size, r, g, b, a)
+  Description: Draws text onto this render texture.
+  Parameters: font, str, x, y, size, r, g, b, a
+  Returns: void
+
+RenderTexture:getTextSize(font, str, size)
+  Description: Returns the width and height of the text for the given font and size.
+  Parameters: font, str, size
+  Returns: number, number
+
+RenderTexture:new(width, height)
+  Description: Static: RenderTexture.new(width, height). Both must be integers from 1 to 1024.
+  Parameters: width, height
+  Returns: RenderTexture
+
+RenderTexture:drawRectangle(x, y, width, height, r, g, b, a)
+  Description: Draws a filled rectangle. Colors must be integers 0-255; coordinates within 16384 px.
+  Parameters: x, y, width, height, r, g, b, a
+  Returns: void
+
+RenderTexture:toPNG()
+  Description: Flushes the texture and returns it as PNG-encoded bytes in a string.
+  Returns: string
+
+
+
+============================================================
+Sprite
+============================================================
+Slug: sprite
+
+Methods and properties for the Sprite class.
+
+------------------------------------------------------------
+Sprite
+------------------------------------------------------------
+Sprite:setScale(x, y)
+  Description: Sets the scale for this sprite. It uses x, y.
+  Parameters: x, y
+  Returns: void
+
+Sprite:setPosition(x, y)
+  Description: Sets the position for this sprite. It uses x, y.
+  Parameters: x, y
+  Returns: void
+
+Sprite:setRect(x, y, width, height)
+  Description: Sets the rect for this sprite. It uses x, y, width, height.
+  Parameters: x, y, width, height
+  Returns: void
+
+Sprite:setTexture(texture)
+  Description: Sets the texture used by this sprite.
+  Parameters: texture
+  Returns: void
+
+Sprite:new()
+  Description: Runs the new operation for this sprite.
+  Returns: Sprite
+
+
+
+============================================================
+Texture
+============================================================
+Slug: texture
+
+Methods and properties for the Texture class.
+
+------------------------------------------------------------
+Texture
+------------------------------------------------------------
+Texture:loadFromFile(path)
+  Description: Loads from file from storage or server state. It uses path.
+  Parameters: path
+  Returns: void
+
+Texture:new()
+  Description: Runs the new operation for this texture.
+  Returns: Texture
+
+
+
+============================================================
+ActiveEffects
+============================================================
+Slug: active-effects
+
+Methods and properties for the ActiveEffects class.
+
+------------------------------------------------------------
+ActiveEffects
+------------------------------------------------------------
+ActiveEffects:getType()
+  Description: Returns the playmod/effect type ID.
+  Returns: number
+
+ActiveEffects:getExpireTime()
+  Description: Returns the unix timestamp when this effect expires.
+  Returns: number
+
+ActiveEffects:getName(player)
+  Description: Returns the effect name for the given avatar.
+  Parameters: player
+  Returns: string
+
+ActiveEffects:getDescription(player)
+  Description: Returns the effect description for the given avatar.
+  Parameters: player
+  Returns: string
+
+ActiveEffects:getItemID()
+  Description: Returns the icon item ID for this effect.
+  Returns: number
+
+
+
+============================================================
+http
+============================================================
+Slug: http
+
+Methods and properties for the http class.
+
+------------------------------------------------------------
+http
+------------------------------------------------------------
+http:get(url, headers)
+  Description: Async: must run inside a coroutine. Yields until the request finishes, then resumes with (body, statusCode). statusCode is -1 on failure and body is the error. Blocks local/private IPs; rate limited to one call per 50 ms per thread. headers is an optional { name = value } table.
+  Parameters: url, headers
+  Returns: string, number
+
+http:post(url, headers, postData)
+  Description: Async: must run inside a coroutine. Same behavior as http.get, but sends postData as the request body.
+  Parameters: url, headers, postData
+  Returns: string, number
+
+
+
+============================================================
+file
+============================================================
+Slug: file
+
+Methods and properties for the file class.
+
+------------------------------------------------------------
+file
+------------------------------------------------------------
+file:read(path)
+  Description: Reads a file inside the server's localStorage folder. Errors if the path is unsafe, missing or too large.
+  Parameters: path
+  Returns: string
+
+file:write(path, data)
+  Description: Writes (truncates) a file inside localStorage, creating parent folders. Returns true.
+  Parameters: path, data
+  Returns: boolean
+
+file:exists(path)
+  Description: Checks whether a path inside localStorage exists.
+  Parameters: path
+  Returns: boolean
+
+file:delete(path)
+  Description: Deletes a file inside localStorage. Returns true.
+  Parameters: path
+  Returns: boolean
+
+
+
+============================================================
+dir
+============================================================
+Slug: dir
+
+Methods and properties for the dir class.
+
+------------------------------------------------------------
+dir
+------------------------------------------------------------
+dir:create(path)
+  Description: Creates a directory (and parents) inside localStorage. Returns true.
+  Parameters: path
+  Returns: boolean
+
+dir:exists(path)
+  Description: Checks whether a directory inside localStorage exists.
+  Parameters: path
+  Returns: boolean
+
+dir:delete(path)
+  Description: Recursively deletes a directory inside localStorage. Returns true.
+  Parameters: path
+  Returns: boolean
+
+
+
+============================================================
+timer
+============================================================
+Slug: timer
+
+Methods and properties for the timer class.
+
+------------------------------------------------------------
+timer
+------------------------------------------------------------
+timer:setTimeout(seconds, callback, ...)
+  Description: Runs callback once after the given seconds. Extra arguments are passed to the callback. Returns a timer ID.
+  Parameters: seconds, callback, ...
+  Returns: number
+
+timer:setInterval(seconds, callback, ...)
+  Description: Runs callback repeatedly every given seconds. Extra arguments are passed to the callback. Returns a timer ID.
+  Parameters: seconds, callback, ...
+  Returns: number
+
+timer:clear(id)
+  Description: Cancels a timer created with setTimeout or setInterval.
+  Parameters: id
+  Returns: void
+
+
+
+============================================================
+sqlite
+============================================================
+Slug: sqlite
+
+Methods and properties for the sqlite class.
+
+------------------------------------------------------------
+sqlite
+------------------------------------------------------------
+sqlite:open(path)
+  Description: Opens (or creates) a SQLite database inside localStorage. ATTACH/DETACH and extension loading are disabled. Returns nil and an error message on failure.
+  Parameters: path
+  Returns: SqliteDB
+
+
+
+============================================================
+SqliteDB
+============================================================
+Slug: sqlite-db
+
+Methods and properties for the SqliteDB class.
+
+------------------------------------------------------------
+SqliteDB
+------------------------------------------------------------
+SqliteDB:query(sql)
+  Description: Runs one SQL statement. SELECT returns a table of rows (all values are strings); other statements return (true, lastInsertRowID); errors return (nil, message).
+  Parameters: sql
+  Returns: any
+
+SqliteDB:close()
+  Description: Closes the database.
+  Returns: void
+
+
+
+============================================================
+bit
+============================================================
+Slug: bit
+
+Methods and properties for the bit class.
+
+------------------------------------------------------------
+bit
+------------------------------------------------------------
+bit:band(a, b)
+  Description: Bitwise AND.
+  Parameters: a, b
+  Returns: number
+
+bit:bor(a, b)
+  Description: Bitwise OR.
+  Parameters: a, b
+  Returns: number
+
+bit:bxor(a, b)
+  Description: Bitwise XOR.
+  Parameters: a, b
+  Returns: number
+
+bit:bnot(a)
+  Description: Bitwise NOT.
+  Parameters: a
+  Returns: number
+
+bit:lshift(a, n)
+  Description: Logical left shift.
+  Parameters: a, n
+  Returns: number
+
+bit:rshift(a, n)
+  Description: Logical right shift.
+  Parameters: a, n
+  Returns: number
+
+bit:arshift(a, n)
+  Description: Arithmetic right shift.
+  Parameters: a, n
+  Returns: number
+
+bit:mod(a, b)
+  Description: Modulo.
+  Parameters: a, b
+  Returns: number
+
+
+
+============================================================
+os
+============================================================
+Slug: os
+
+Methods and properties for the os class.
+
+------------------------------------------------------------
+os
+------------------------------------------------------------
+os:time()
+  Description: Returns the current unix time in seconds. Only this function exists in the sandboxed os table.
+  Returns: number
+
+
+
+============================================================
+Callbacks
+============================================================
+Slug: callbacks
+
+Register callbacks to respond to game events. Each callback receives specific parameters from the game.
+
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+
+
+============================================================
+Global Functions
+============================================================
+Slug: globals
+
+Global utility functions available anywhere in your Lua scripts. No class prefix needed.
+
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+
+
+============================================================
+Utilities
+============================================================
+Slug: utilities
+
+Timer, HTTP, File I/O, Database, and Bitwise operation utilities.
+
+------------------------------------------------------------
+
+------------------------------------------------------------
+
