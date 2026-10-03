@@ -2842,5 +2842,422 @@ Timer, HTTP, File I/O, Database, and Bitwise operation utilities.
 
 ------------------------------------------------------------
 
+Dialog Syntax or Element List
+
+set_default_color
+Sets the default dialog text color (e.g., \o`).
+
+Parameters
+color
+
+set_default_color|color
+set_bg_color
+Sets the dialog background color.
+
+Parameters
+r,g,b,a
+``
+
+set_bg_color|r,g,b,a|
+set_border_color
+Sets the dialog border color.
+
+Parameters
+r,g,b,a
+``
+
+set_border_color|r,g,b,a|
+set_custom_spacing
+Adds custom horizontal and vertical spacing between elements.
+
+Parameters
+x:value;y:value
+``
+
+set_custom_spacing|x:value;y:value|
+add_label
+Adds a text label (size: big/small, alignment: left/center/right).
+
+Parameters
+size
+message
+alignment
+
+add_label|size|message|alignment
+add_banner
+Adds a banner.
+
+Parameters
+imagePath
+x
+y
+``
+
+add_banner|imagePath|x|y|
+add_button
+Adds a standard button.
+
+Parameters
+name
+label
+flags
+0
+0
+
+add_button|name|label|flags|0|0
+add_spacer
+Adds a vertical spacer (size: big/small).
+
+Parameters
+size
+``
+
+add_spacer|size|
+add_textbox
+Adds a text box with a message.
+
+Parameters
+message
+``
+
+add_textbox|message|
+add_checkbox
+Adds a checkbox. checked is 1 for true, 0 for false.
+
+Parameters
+name
+message
+checked
+
+add_checkbox|name|message|checked
+add_smalltext
+Adds small text.
+
+Parameters
+message
+``
+
+add_smalltext|message|
+add_big_banner
+Adds a larger banner with text.
+
+Parameters
+imagePath
+x
+y
+text
+``
+
+add_big_banner|imagePath|x|y|text|
+add_quick_exit
+Adds a quick exit "X" button to the dialog.
+
+Parameters
+``
+
+add_quick_exit|
+add_tab_button
+Adds a tab button.
+
+Parameters
+name
+label
+iconPath
+x
+y
+
+add_tab_button|name|label|iconPath|x|y
+add_text_input
+Adds a text input field.
+
+Parameters
+name
+message
+defaultInput
+length
+
+add_text_input|name|message|defaultInput|length
+add_item_picker
+Adds a searchable item picker.
+
+Parameters
+name
+message
+placeholder
+``
+
+add_item_picker|name|message|placeholder|
+add_player_info
+Displays a player info block.
+
+Parameters
+name
+level
+exp
+expRequired
+
+add_player_info|name|level|exp|expRequired
+add_custom_break
+Adds a line break.
+
+Parameters
+``
+
+add_custom_break|
+add_custom_label
+Adds a custom label with options.
+
+Parameters
+option1
+option2
+``
+
+add_custom_label|option1|option2|
+add_image_button
+Adds a button with a custom image.
+
+Parameters
+name
+imagePath
+flags
+open
+label
+``
+
+add_image_button|name|imagePath|flags|open|label|
+add_progress_bar
+Adds a progress bar.
+
+Parameters
+name
+size
+text
+current
+max
+color
+``
+
+add_progress_bar|name|size|text|current|max|color|
+add_custom_button
+Adds a custom button.
+
+Parameters
+name
+option
+``
+
+add_custom_button|name|option|
+add_custom_spacer
+Adds a custom spacer with a specified width.
+
+Parameters
+x:value
+``
+
+add_custom_spacer|x:value|
+add_achieve_button
+Adds an achievement button.
+
+Parameters
+achName
+achToGet
+achID
+unk
+
+add_achieve_button|achName|achToGet|achID|unk
+add_custom_textbox
+Adds a custom textbox with a specified size.
+
+Parameters
+text
+size:value
+``
+
+add_custom_textbox|text|size:value|
+add_label_with_icon
+Adds a label prefixed with an item icon.
+
+Parameters
+size
+message
+alignment
+iconID
+
+add_label_with_icon|size|message|alignment|iconID
+add_button_with_icon
+A versatile button with an icon and various display options. See examples in text file.
+
+Parameters
+name
+text
+options
+itemID
+...
+``
+
+add_button_with_icon|name|text|options|itemID|...|
+add_cmmnty_wotd_bttn
+Adds a community WOTD button.
+
+Parameters
+top
+worldName
+ownerName
+imagePath
+x
+y
+worldName
+``
+
+add_cmmnty_wotd_bttn|top|worldName|ownerName|imagePath|x|y|worldName|
+add_community_button
+Adds a community button.
+
+Parameters
+button
+btnName
+flags
+0
+0
+
+add_community_button|button|btnName|flags|0|0
+add_seed_color_icons
+Adds seed color icons for a specific item.
+
+Parameters
+itemID
+
+add_seed_color_icons|itemID
+add_small_font_button
+Adds a button with a smaller font.
+
+Parameters
+name
+label
+flags
+0
+0
+
+add_small_font_button|name|label|flags|0|0
+add_cmmnty_ft_wrld_bttn
+Adds a community feature world button.
+
+Parameters
+worldName
+ownerName
+worldName
+``
+
+add_cmmnty_ft_wrld_bttn|worldName|ownerName|worldName|
+add_searchable_item_list
+Adds a searchable list of items. Options e.g., listType:iconGrid;resultLimit:12.
+
+Parameters
+data
+options
+searchFixedName
+
+add_searchable_item_list|data|options|searchFixedName
+add_dual_layer_icon_label
+Adds a dual-layer icon label.
+
+Parameters
+size
+message
+alignment
+iconID
+bg
+fg
+size
+toggle
+
+add_dual_layer_icon_label|size|message|alignment|iconID|bg|fg|size|toggle
+add_label_with_icon_button
+Adds a label with an icon and a button.
+
+Parameters
+size
+message
+alignment
+iconID
+buttonName
+
+add_label_with_icon_button|size|message|alignment|iconID|buttonName
+add_friend_image_label_button
+Adds a button with a friend image.
+
+Parameters
+name
+label
+texture_path
+size
+texture_x
+texture_y
+``
+
+add_friend_image_label_button|name|label|texture_path|size|texture_x|texture_y|
+embed_data
+Embeds data into the dialog, often used to set the dialog_name.
+
+Parameters
+embed
+data
+``
+
+embed_data|embed|data|
+end_dialog
+undefined
+
+Parameters
+dialog_id
+Close?
+Ok?
+
+end_dialog|dialog_id|Close?|Ok?
+enable_tabs
+Enables or disables tabs.
+
+Parameters
+enable
+``
+
+enable_tabs|enable|
+disable_resize
+Disables automatic dialog resizing.
+
+Parameters
+``
+
+disable_resize|
+end_custom_tabs
+Ends a container for custom tabs.
+
+Parameters
+``
+
+end_custom_tabs|
+reset_placement_x
+Resets horizontal placement.
+
+Parameters
+``
+
+reset_placement_x|
+start_custom_tabs
+Starts a container for custom tabs.
+
+Parameters
+``
+
+start_custom_tabs|
+community_hub_type
+Sets the community hub type.
+
+Parameters
+hubType
+``
+
+community_hub_type|hubType|
+
 ------------------------------------------------------------
 
